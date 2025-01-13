@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Reset dan pengaturan dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #1e90ff;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #1e90ff;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #4682b4;
+            outline: none;
+        }
+
+        /* Gaya ketika password salah */
+        input.invalid {
+            border-color: #ff0000; /* Merah untuk kesalahan */
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4682b4;
+        }
+
+        .check-status {
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: normal;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s ease;
+        }
+
+        .check-status:hover {
+            border-bottom: 1px solid #1e90ff;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Responsivitas untuk layar kecil */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="text"], input[type="password"], button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="logo.jpg" alt="Logo" class="logo"> <!-- Ganti 'logo.png' dengan path logo Anda -->
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Nama Pengguna:</label>
+                <!-- Placeholder untuk Nama Pengguna -->
+                <input type="text" id="username" name="username" placeholder="Masukkan Nama Pengguna" required>
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <!-- Placeholder untuk Password -->
+                <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+            </div>
+
+            <button type="submit">Login</button>
+            <!-- Cek Status Layanan Link -->
+            <a href="user_dashboard.php" class="check-status">Cek Status Layanan</a>
+            
+            <!-- Tempat untuk menampilkan pesan kesalahan -->
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+            var passwordInput = document.getElementById("password");
+
+            // Reset gaya dan pesan kesalahan sebelumnya
+            passwordInput.classList.remove("invalid");
+            errorMessage.textContent = "";
+
+            // Memeriksa apakah username dan password cocok untuk admin
+            if (username.toLowerCase() === "admin" && password === "admin123") {
+                window.location.href = "admin_dashboard.php"; // Arahkan ke halaman dashboard admin
+            } 
+            // Memeriksa username dan password untuk user biasa
+            else if (username.toLowerCase() === "user" && password === "user123") {
+                window.location.href = "index.html"; // Arahkan ke halaman dashboard user
+            } 
+            // Jika username atau password salah
+            else {
+                passwordInput.classList.add("invalid"); // Menambahkan kelas invalid pada password
+                errorMessage.textContent = "Username atau password salah!"; // Menampilkan pesan kesalahan
+            }
+        });
+    </script>
+</body>
+</html>

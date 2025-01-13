@@ -1,0 +1,78 @@
+/* Mengatur tampilan latar belakang dan tata letak halaman */
+body {
+    background-color: #e0f2ff; /* Latar belakang biru muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Panel warna dan gaya */
+  .panel-primary {
+    border-color: #007bff;
+  }
+  
+  .panel-primary .panel-heading {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  /* Menambahkan gaya untuk judul agar lebih besar dan lebih tebal */
+  .panel-heading h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Menambah panjang dan gaya pada form control */
+  .form-control {
+    width: 100%; /* Mengisi seluruh lebar kolom */
+    padding: 10px 15px; /* Menambah padding di dalam input */
+    font-size: 16px; /* Menambah ukuran font */
+  }
+  
+  /* Membuat textarea lebih panjang */
+  textarea.form-control {
+    height: 150px; /* Membuat textarea lebih panjang */
+  }
+  
+  /* Tombol dan input fokus dengan warna biru */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Warna biru untuk label dan teks footer */
+  label {
+    color: #0056b3;
+    display: block; /* Memastikan setiap label ada di baris terpisah */
+    margin-top: 10px;
+  }
+  
+  .panel-footer small {
+    color: #0056b3;
+  }
+  
+  /* Menambah tinggi untuk panel body */
+  .panel-body {
+    min-height: 600px; /* Menambah tinggi minimum form */
+    overflow-y: auto; /* Menambahkan scroll jika konten melebihi tinggi */
+  }
+  
+  /* Notifikasi Toast */
+  .toast-header, .toast-body {
+    background-color: #007bff;
+    color: white;
+  }
+  

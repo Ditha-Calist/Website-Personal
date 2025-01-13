@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Akhir</title>
+    <!-- Menyertakan Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+      /* Pastikan seluruh body terpusat dan mengambil seluruh tinggi layar */
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e0f2ff; /* Latar belakang biru muda */
+      }
+
+      /* Div utama yang menampung semua konten */
+      .container {
+        text-align: center;
+        max-width: 800px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+      }
+
+      /* Logo yang disesuaikan ukurannya */
+      .logo-img {
+        width: 150px; /* Ukuran logo */
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      /* Styling judul */
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      /* Styling teks deskripsi */
+      p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      /* Tombol dengan styling */
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 12px 20px;
+        font-size: 18px;
+        width: 100%;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <!-- Logo pada halaman sambutan -->
+          <img src="centang.jpg" alt="Logo" class="logo-img">
+
+          <h1>Terimakasih Telah Mengisi</h1>
+          <p>Service request telah kami terima. Anda dapat melihat status layanan ditempat yang telah disediakan.</p>
+          
+          <!-- Tombol untuk mengarahkan ke form -->
+          <a href="halaman.html" class="btn btn-primary">Mulai Isi Data Baru</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
